@@ -1,12 +1,7 @@
-import { useState } from 'react';
+
 import './InputRadio.css'
-function InputRadio() {
-  const [selectedOption, setSelectedOption] = useState('option1');
-
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
+function InputRadio({onChange,checkedMetric,  checkedImperial}) {
+ 
   return (
     <div className='input-radio'>
       <label>
@@ -14,8 +9,8 @@ function InputRadio() {
           type="radio"
           name="options"
           value="metric"
-          checked={selectedOption === 'metric'}
-          onChange={handleOptionChange}
+          checked={checkedMetric}
+          onChange={onChange}
         />
         Metric
       </label>
@@ -25,8 +20,8 @@ function InputRadio() {
           type="radio"
           name="options"
           value="imperial"
-          checked={selectedOption === 'imperial'}
-          onChange={handleOptionChange}
+          checked={checkedImperial}
+          onChange={onChange}
         />
        Imperial
       </label>

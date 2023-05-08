@@ -10,4 +10,13 @@
   border: 1px solid var(--gray);
   border-radius: 4px;
   padding: 0 16px;
+  font-size: 1.4rem;
+}
+.input input[type="text"]:focus{
+  outline: 2px solid var(--blue);
+}
+.input input[type="text"]::placeholder{
+  color: var(--blue);
+  font-size: 1.2rem;
+  text-align: right;
 }
