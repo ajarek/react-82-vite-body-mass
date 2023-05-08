@@ -4,6 +4,7 @@
   --blue:#42A5F5;
   --gray:#9E9E9E;
   --dark:#0c142d;
+  --light:#fff;
   --rose-light:#f0e6ef;
   --rose:#f0a8cb;
   --gold-light:#FFECB3;
@@ -22,6 +23,6 @@ body{
   max-width: 1440px;
   min-height: 100vh;
   margin: 0 auto;
-  padding:0 4rem;
-  background-color: var(--light-blue);
+  padding:0 6rem;
+ 
 }
