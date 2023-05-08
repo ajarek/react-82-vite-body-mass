@@ -1,0 +1,18 @@
+.input-radio{
+ 
+  display: flex;
+  justify-content: space-between;
+  padding-right: 48px;
+}
+
+input[type=radio]  {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 16px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  cursor: pointer;
+}
+

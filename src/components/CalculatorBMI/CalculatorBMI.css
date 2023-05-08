@@ -1,0 +1,18 @@
+.calculator-bmi{
+  width: 380px;
+  height: 300px;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%,-50%);
+  background-color: var(--light);
+  padding: 8px;
+}
+.calculator-bmi h3{
+  font-weight: 500;
+}
+.wrapper-input{
+  display: flex;
+  margin-top: 16px;
+}
