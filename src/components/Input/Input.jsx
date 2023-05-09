@@ -5,7 +5,7 @@ const Input = ({ label, value, onChange, placeholder }) => {
   return (
     <div className="input">
       <label>{label}</label>
-      <input type="text" value={value} onChange={onChange} placeholder={placeholder} />
+      <input type="number" value={value} onChange={onChange} placeholder={placeholder}  required />
     </div>
   );
 };

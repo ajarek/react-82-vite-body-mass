@@ -5,33 +5,78 @@ import Input from '../Input/Input/'
 import Result from '../Result/Result/'
 
 const CalculatorBMI = () => {
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
-  const [selectedOption, setSelectedOption] = useState('metric');
+  const [height, setHeight] = useState('')
+  const [weight, setWeight] = useState('')
+  const [selectedOption, setSelectedOption] = useState('metric')
+  const bmiMetric = ((weight * 10000) / (height * height)).toFixed(2)
+  const bmiImperial = ((weight * 6.35) / (height * 0.3 * height * 0.3)).toFixed(
+    2
+  )
 
   const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+    setSelectedOption(event.target.value)
+  }
 
-  const handleHeight = event => {
-    setHeight(event.target.value);
-  };
+  const handleHeight = (event) => {
+    setHeight(event.target.value)
+  }
 
-  const handleWeight = event => {
-    setWeight(event.target.value);
-  };
-  
+  const handleWeight = (event) => {
+    setWeight(event.target.value)
+  }
+
+  function BmiLegend() {
+    const bmi =
+      selectedOption === 'metric'
+        ? (weight * 10000) / (height * height)
+        : (weight * 6.35) / (height * 0.3 * height * 0.3)
+
+    if (bmi < 18.5) {
+      return `Your BMI is ${bmi.toFixed(2)}. You are underweight.`
+    } else if (bmi >= 18.5 && bmi < 25) {
+      return `Your BMI is ${bmi.toFixed(2)}. You have the correct weight.`
+    } else if (bmi >= 25 && bmi < 30) {
+      return `Your BMI is ${bmi.toFixed(2)}. You are overweight.`
+    } else {
+      return `Your BMI is ${bmi.toFixed(2)}. You are obese.`
+    }
+  }
+
   return (
     <div className='calculator-bmi'>
       <h3>Enter your details below</h3>
-      <InputRadio onChange={handleOptionChange} checkedMetric={selectedOption === 'metric'} checkedImperial={selectedOption === 'imperial'} />
-      <div className="wrapper-input">
-        <Input label={'Height'} placeholder={selectedOption==='metric'?'cm':'ft'} onChange={handleHeight}/>
-        <Input label={'Weight'} placeholder={selectedOption==='metric'?'kg':'st'} onChange={handleWeight}/>
+      <InputRadio
+        onChange={handleOptionChange}
+        checkedMetric={selectedOption === 'metric'}
+        checkedImperial={selectedOption === 'imperial'}
+      />
+      <div className='wrapper-input'>
+        <Input
+          label={'Height'}
+          placeholder={selectedOption === 'metric' ? 'cm' : 'ft'}
+          onChange={handleHeight}
+        />
+        <Input
+          label={'Weight'}
+          placeholder={selectedOption === 'metric' ? 'kg' : 'st'}
+          onChange={handleWeight}
+        />
       </div>
-      {height&&weight ? <Result info={`Your BMI is ${selectedOption==='metric'?((weight*10000)/(height*height)).toFixed(2):((weight*6.35)/(height*0.3*height*0.3)).toFixed(2)}`} text={'Your BMI suggests you`re healthy weight. Your ideal weight is between 63.3kgs-85.2kgs'}/>:
-      <Result info={'Welcome!'} text={'Enter your height and weight and you`ll see your BMI result here '}/>
-    }
+      {height && weight ? (
+        <Result
+          info={`Your BMI is ${
+            selectedOption === 'metric' ? bmiMetric : bmiImperial
+          }`}
+          text={BmiLegend()}
+        />
+      ) : (
+        <Result
+          info={'Welcome!'}
+          text={
+            'Enter your height and weight and you`ll see your BMI result here '
+          }
+        />
+      )}
     </div>
   )
 }
