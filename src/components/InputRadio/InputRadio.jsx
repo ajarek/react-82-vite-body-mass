@@ -1,14 +1,12 @@
-
 import './InputRadio.css'
-function InputRadio({onChange,checkedMetric,  checkedImperial}) {
- 
+function InputRadio({ onChange, checkedMetric, checkedImperial }) {
   return (
     <div className='input-radio'>
       <label>
         <input
-          type="radio"
-          name="options"
-          value="metric"
+          type='radio'
+          name='options'
+          value='metric'
           checked={checkedMetric}
           onChange={onChange}
         />
@@ -17,15 +15,15 @@ function InputRadio({onChange,checkedMetric,  checkedImperial}) {
       <br />
       <label>
         <input
-          type="radio"
-          name="options"
-          value="imperial"
+          type='radio'
+          name='options'
+          value='imperial'
           checked={checkedImperial}
           onChange={onChange}
         />
-       Imperial
+        Imperial
       </label>
     </div>
-  );
+  )
 }
-export default InputRadio;
+export default InputRadio

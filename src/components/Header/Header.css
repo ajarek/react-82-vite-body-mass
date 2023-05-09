@@ -1,22 +1,32 @@
-.header{
+.header {
   width: 75%;
-  height: 80vh;
-  background:linear-gradient(90deg, var(--light),25%, var(--light-blue)) ;
+  min-height: 80vh;
+  background: linear-gradient(90deg, var(--light), 25%, var(--light-blue));
   border-bottom-right-radius: 40px;
   position: relative;
 }
-.wrapper-header-text{
+.wrapper-header-text {
   width: 50%;
   margin-top: 2rem;
-  
 }
-.wrapper-header-text h1{
-  font-size:3rem;
+.wrapper-header-text h1 {
+  font-size: 3rem;
   font-weight: 500;
   line-height: 1;
   margin-bottom: 2rem;
   padding-right: 0.5rem;
 }
-.wrapper-header-text p{
+.wrapper-header-text p {
   color: var(--gray);
+}
+@media (max-width: 945px) {
+  .header {
+    width: 100%;
+  }
+  .wrapper-header-text {
+    width: 100%;
+  }
+  .wrapper-header-text h1 {
+    font-size: 1.5rem;
+  }
 }

@@ -1,28 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-:root{
-  --light-blue:#E3F2FD;
-  --blue:#42A5F5;
-  --gray:#9E9E9E;
-  --dark:#0c142d;
-  --light:#fff;
-  --rose-light:#f0e6ef;
-  --rose:#f0a8cb;
-  --gold-light:#FFECB3;
-  --gold:#FFC107;
+:root {
+  --light-blue: #e3f2fd;
+  --blue: #42a5f5;
+  --gray: #9e9e9e;
+  --dark: #0c142d;
+  --light: #fff;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   font-family: 'Poppins', sans-serif;
- 
 }
-#root{
+#root {
   max-width: 1440px;
   min-height: 100vh;
   margin: 0 auto;
-  padding:0 6rem;
- 
+  padding: 0 6rem;
+}
+@media (max-width: 945px) {
+  #root {
+    padding: 0 1rem;
+  }
 }

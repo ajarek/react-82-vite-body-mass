@@ -1,13 +1,11 @@
-.result{
+.result {
   background-color: var(--blue);
   color: var(--light);
   margin-top: 16px;
-  padding:16px 8px;
+  padding: 16px 8px;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-
-
 }
-.result p{
+.result p {
   font-size: 0.8rem;
 }
